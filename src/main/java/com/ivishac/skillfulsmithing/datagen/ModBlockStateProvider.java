@@ -1,6 +1,7 @@
 package com.ivishac.skillfulsmithing.datagen;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
+import com.ivishac.skillfulsmithing.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -15,7 +16,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks.BLOCKNAME);
+        blockWithItem(ModBlocks.FIRE_CLAY);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

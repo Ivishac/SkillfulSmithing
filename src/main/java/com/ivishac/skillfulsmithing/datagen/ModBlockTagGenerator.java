@@ -1,8 +1,10 @@
 package com.ivishac.skillfulsmithing.datagen;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
+import com.ivishac.skillfulsmithing.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -15,8 +17,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
-        //this.tag(ModTags.Blocks.TAGNAME) .add(ModBlocks.BLOCKNAME.get()).addTag(Tags.Blocks.ORES);
+    protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.FIRE_CLAY.get());
 
     }
 }

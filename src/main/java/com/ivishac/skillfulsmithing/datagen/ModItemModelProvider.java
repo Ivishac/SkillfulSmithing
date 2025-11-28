@@ -1,6 +1,7 @@
 package com.ivishac.skillfulsmithing.datagen;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
+import com.ivishac.skillfulsmithing.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -16,6 +17,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.UNFIRED_CLAY_CRUCIBLE);
+        simpleItem(ModItems.FIRED_CLAY_CRUCIBLE);
+        simpleItem(ModItems.FIRE_CLAY_BALL);
+        simpleItem(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE);
+        simpleItem(ModItems.FIRED_FIRE_CLAY_CRUCIBLE);
 
     }
 
