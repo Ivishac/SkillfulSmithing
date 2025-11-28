@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "fired_fire_clay_crucible",
+  "ingredient": {
+    "item": "skillfulsmithing:unfired_fire_clay_crucible"
+  },
+  "result": "skillfulsmithing:fired_fire_clay_crucible"
+}

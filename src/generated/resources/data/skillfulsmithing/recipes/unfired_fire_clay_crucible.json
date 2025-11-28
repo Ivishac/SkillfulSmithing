@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "skillfulsmithing:fire_clay_ball"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "FSF",
+    " F "
+  ],
+  "result": {
+    "item": "skillfulsmithing:unfired_fire_clay_crucible"
+  },
+  "show_notification": true
+}
