@@ -26,6 +26,11 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.FIRE_CLAY_BALL.get());
                         pOutput.accept(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRED_FIRE_CLAY_CRUCIBLE.get());
+                        pOutput.accept(ModItems.FLINT_SWORD.get());
+                        pOutput.accept(ModItems.FLINT_PICKAXE.get());
+                        pOutput.accept(ModItems.FLINT_AXE.get());
+                        pOutput.accept(ModItems.FLINT_SHOVEL.get());
+                        pOutput.accept(ModItems.FLINT_HOE.get());
 
                     })
                     .build());

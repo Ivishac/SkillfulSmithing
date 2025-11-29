@@ -23,6 +23,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE);
         simpleItem(ModItems.FIRED_FIRE_CLAY_CRUCIBLE);
 
+        handheldItem(ModItems.FLINT_SWORD);
+        handheldItem(ModItems.FLINT_PICKAXE);
+        handheldItem(ModItems.FLINT_AXE);
+        handheldItem(ModItems.FLINT_SHOVEL);
+        handheldItem(ModItems.FLINT_HOE);
+
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(SkillfulSmithing.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
