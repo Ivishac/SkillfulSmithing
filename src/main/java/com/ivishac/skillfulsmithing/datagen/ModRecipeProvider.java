@@ -1,5 +1,6 @@
 package com.ivishac.skillfulsmithing.datagen;
 
+import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -32,6 +33,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('F', ModItems.FIRE_CLAY_BALL.get())
                 .define('S', Items.SAND)
                 .unlockedBy(getHasName(ModItems.FIRE_CLAY_BALL.get()), has(ModItems.FIRE_CLAY_BALL.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FIRE_CLAY.get())
+                .pattern("CC")
+                .pattern("CC")
+                .define('C', ModItems.FIRE_CLAY_BALL.get())
+                .unlockedBy("has_fire_clay_ball", has(ModItems.FIRE_CLAY_BALL.get()))
                 .save(pWriter);
 
         oreSmelting(pWriter, List.of(ModItems.UNFIRED_CLAY_CRUCIBLE.get()), RecipeCategory.MISC, ModItems.FIRED_CLAY_CRUCIBLE.get(),

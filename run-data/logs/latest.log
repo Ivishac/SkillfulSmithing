@@ -1,33 +1,33 @@
-[30Nov2025 02:47:19.194] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Ivishac\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, skillfulsmithing, --all, --output, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\generated\resources, --existing, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\main\resources]
-[30Nov2025 02:47:19.199] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.16 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[30Nov2025 02:47:19.354] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[30Nov2025 02:47:19.402] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Ivishac/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[30Nov2025 02:47:19.681] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.10\ccc533c7dd67e0983217197d7549c8b49e7ab453\javafmllanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[30Nov2025 02:47:19.685] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.10\e9a2879fe3612ea34b9728ec2633304a1e67d480\lowcodelanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[30Nov2025 02:47:19.689] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.10\ec5cefbbc65c67302b8fac317010faab85fa14b9\mclanguage-1.20.1-47.4.10.jar is missing mods.toml file
-[30Nov2025 02:47:19.693] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.10\94dae566be650566ea9115a1414ab76bfcf5a804\fmlcore-1.20.1-47.4.10.jar is missing mods.toml file
-[30Nov2025 02:47:19.758] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[30Nov2025 02:47:21.152] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Ivishac\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, skillfulsmithing, --all, --output, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\generated\resources, --existing, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\main\resources]
-[30Nov2025 02:47:21.537] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [skillfulsmithing]
-[30Nov2025 02:47:25.811] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.10, for MC 1.20.1 with MCP 20230612.114412
-[30Nov2025 02:47:25.817] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.10 Initialized
-[30Nov2025 02:47:26.336] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Ivishac/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[30Nov2025 02:47:26.337] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Ivishac/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[30Nov2025 02:47:26.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[30Nov2025 02:47:26.662] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 49 ms
-[30Nov2025 02:47:26.662] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[30Nov2025 02:47:26.697] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 33 ms
-[30Nov2025 02:47:26.697] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : skillfulsmithing
-[30Nov2025 02:47:26.709] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : skillfulsmithing finished after 12 ms
-[30Nov2025 02:47:26.709] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: skillfulsmithing
-[30Nov2025 02:47:26.816] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: skillfulsmithing finished after 107 ms
-[30Nov2025 02:47:26.817] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: skillfulsmithing
-[30Nov2025 02:47:26.825] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: skillfulsmithing finished after 8 ms
-[30Nov2025 02:47:26.825] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[30Nov2025 02:47:26.834] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 9 ms
-[30Nov2025 02:47:26.834] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id skillfulsmithing
-[30Nov2025 02:47:26.842] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id skillfulsmithing finished after 6 ms
-[30Nov2025 02:47:26.842] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id skillfulsmithing
-[30Nov2025 02:47:26.842] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id skillfulsmithing finished after 0 ms
-[30Nov2025 02:47:26.843] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 231 ms
-[30Nov2025 02:47:26.851] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 50, old count: 50, new count: 51, removed stale: 0, written: 0
+[30Nov2025 14:18:20.048] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Ivishac\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, skillfulsmithing, --all, --output, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\generated\resources, --existing, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\main\resources]
+[30Nov2025 14:18:20.056] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.16 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[30Nov2025 14:18:20.198] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[30Nov2025 14:18:20.254] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Ivishac/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[30Nov2025 14:18:20.568] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.10\ccc533c7dd67e0983217197d7549c8b49e7ab453\javafmllanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[30Nov2025 14:18:20.571] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.10\e9a2879fe3612ea34b9728ec2633304a1e67d480\lowcodelanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[30Nov2025 14:18:20.575] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.10\ec5cefbbc65c67302b8fac317010faab85fa14b9\mclanguage-1.20.1-47.4.10.jar is missing mods.toml file
+[30Nov2025 14:18:20.579] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Ivishac\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.10\94dae566be650566ea9115a1414ab76bfcf5a804\fmlcore-1.20.1-47.4.10.jar is missing mods.toml file
+[30Nov2025 14:18:20.648] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[30Nov2025 14:18:22.115] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Ivishac\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, skillfulsmithing, --all, --output, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\generated\resources, --existing, C:\Users\Ivishac\Desktop\Secret Project\SkillfulSmithing\src\main\resources]
+[30Nov2025 14:18:22.546] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [skillfulsmithing]
+[30Nov2025 14:18:27.034] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.10, for MC 1.20.1 with MCP 20230612.114412
+[30Nov2025 14:18:27.040] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.10 Initialized
+[30Nov2025 14:18:27.494] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Ivishac/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[30Nov2025 14:18:27.494] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Ivishac/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[30Nov2025 14:18:27.801] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[30Nov2025 14:18:27.850] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 47 ms
+[30Nov2025 14:18:27.850] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[30Nov2025 14:18:27.898] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 46 ms
+[30Nov2025 14:18:27.898] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : skillfulsmithing
+[30Nov2025 14:18:27.917] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : skillfulsmithing finished after 19 ms
+[30Nov2025 14:18:27.918] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: skillfulsmithing
+[30Nov2025 14:18:28.044] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: skillfulsmithing finished after 126 ms
+[30Nov2025 14:18:28.044] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: skillfulsmithing
+[30Nov2025 14:18:28.052] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: skillfulsmithing finished after 8 ms
+[30Nov2025 14:18:28.052] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[30Nov2025 14:18:28.062] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 9 ms
+[30Nov2025 14:18:28.062] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id skillfulsmithing
+[30Nov2025 14:18:28.071] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id skillfulsmithing finished after 7 ms
+[30Nov2025 14:18:28.071] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id skillfulsmithing
+[30Nov2025 14:18:28.071] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id skillfulsmithing finished after 0 ms
+[30Nov2025 14:18:28.071] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 270 ms
+[30Nov2025 14:18:28.082] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 52, old count: 50, new count: 53, removed stale: 0, written: 2

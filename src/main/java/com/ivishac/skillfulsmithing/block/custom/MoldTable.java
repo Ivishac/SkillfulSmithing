@@ -1,6 +1,8 @@
 package com.ivishac.skillfulsmithing.block.custom;
 
+import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.block.entity.MoldTableBlockEntity;
+import com.ivishac.skillfulsmithing.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -25,8 +29,17 @@ import javax.annotation.Nullable;
 public class MoldTable extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14, 11, 14);
 
+    public static final BooleanProperty FILLED = BooleanProperty.create("filled");
+
     public MoldTable(Properties pProperties) {
         super(pProperties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FILLED, Boolean.FALSE));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        super.createBlockStateDefinition(pBuilder);
+        pBuilder.add(FILLED);
     }
 
     @Override
@@ -49,19 +62,35 @@ public class MoldTable extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
                                  InteractionHand pHand, BlockHitResult pHit) {
 
-        ItemStack held = pPlayer.getItemInHand(pHand);
         BlockEntity be = pLevel.getBlockEntity(pPos);
 
-        if (be instanceof MoldTableBlockEntity moldTable && !held.isEmpty() && held.is(Tags.Items.SAND)) {
-            if (!pLevel.isClientSide) {
-                boolean inserted = moldTable.insertOneSand(held);
-                if (inserted) {
-                    return InteractionResult.sidedSuccess(false);
+        if (be instanceof MoldTableBlockEntity moldTable) {
+
+            // Sneak-right-click: remove sand (if present)
+            if (pPlayer.isShiftKeyDown()) {
+                if (!pLevel.isClientSide) {
+                    boolean removed = moldTable.removeFireClay(pPlayer);
+                    if (removed) {
+                        return InteractionResult.sidedSuccess(false);
+                    }
                 }
-                return InteractionResult.PASS;
+                return InteractionResult.sidedSuccess(true);
             }
-            return InteractionResult.sidedSuccess(true);
+
+            // Normal right-click: insert sand
+            ItemStack held = pPlayer.getItemInHand(pHand);
+            if (!held.isEmpty() && held.is(ModBlocks.FIRE_CLAY.get().asItem())) {
+                if (!pLevel.isClientSide) {
+                    boolean inserted = moldTable.insertFireClay(held);
+                    if (inserted) {
+                        return InteractionResult.sidedSuccess(false);
+                    }
+                    return InteractionResult.PASS;
+                }
+                return InteractionResult.sidedSuccess(true);
+            }
         }
+
         return InteractionResult.PASS;
     }
 

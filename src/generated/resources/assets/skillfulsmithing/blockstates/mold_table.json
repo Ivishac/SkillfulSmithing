@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "skillfulsmithing:block/mold_table"
+    "filled=false": {
+      "model": "skillfulsmithing:block/mold_table_empty"
+    },
+    "filled=true": {
+      "model": "skillfulsmithing:block/mold_table_filled"
     }
   }
 }
