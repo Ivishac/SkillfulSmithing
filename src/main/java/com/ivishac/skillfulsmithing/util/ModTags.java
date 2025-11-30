@@ -13,6 +13,11 @@ public class ModTags {
 
         public static final TagKey<Block> NEEDS_FLINT_TOOL = tag("needs_flint_tool");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
+        public static final TagKey<Block> NEEDS_TIN_TOOL = tag("needs_tin_tool");
+        public static final TagKey<Block> NEEDS_BRONZE_TOOL = tag("needs_bronze_tool");
+        public static final TagKey<Block> NEEDS_NICKEL_TOOL = tag("needs_nickel_tool");
+        public static final TagKey<Block> NEEDS_IRON_TOOL = tag("needs_iron_tool");
+        public static final TagKey<Block> NEEDS_STEEL_TOOL = tag("needs_steel_tool");
 
         public static final TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(SkillfulSmithing.MOD_ID, name));

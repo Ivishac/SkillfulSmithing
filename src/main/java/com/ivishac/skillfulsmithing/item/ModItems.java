@@ -1,6 +1,7 @@
 package com.ivishac.skillfulsmithing.item;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
+import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.item.custom.CrucibleItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -45,30 +46,30 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register("copper_hammer",
             () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> TIN_HAMMER = ITEMS.register("tin_hammer",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.TIN, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_HAMMER = ITEMS.register("bronze_hammer",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.BRONZE, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> NICKEL_HAMMER = ITEMS.register("nickel_hammer",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.NICKEL, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.IRON, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_HAMMER = ITEMS.register("steel_hammer",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.STEEL, 2, 0.7f, new Item.Properties()));
 
     public static final RegistryObject<Item> WOODEN_TONGS = ITEMS.register("wooden_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_TONGS = ITEMS.register("copper_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> TIN_TONGS = ITEMS.register("tin_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_TONGS = ITEMS.register("bronze_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> NICKEL_TONGS = ITEMS.register("nickel_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> IRON_TONGS = ITEMS.register("iron_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_TONGS = ITEMS.register("steel_tongs",
-            () -> new PickaxeItem(ModToolTiers.COPPER, 2, 0.7f, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.FLINT, 2, 0.7f, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
