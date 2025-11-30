@@ -1,2 +1,4 @@
-// 1.20.1	2025-11-29T23:46:48.3178278	Loot Tables
+// 1.20.1	2025-11-30T02:26:02.8190019	Loot Tables
+d205480b1c1588e76d53652e3b7e774998006ac7 data/skillfulsmithing/loot_tables/blocks/brick_kiln.json
 d4266d259c2bd0711d3c8e710f4265fa59d8e69f data/skillfulsmithing/loot_tables/blocks/fire_clay.json
+9dcefccf2109f601fc75a4e46cdfedc7b4c1749b data/skillfulsmithing/loot_tables/blocks/mold_table.json

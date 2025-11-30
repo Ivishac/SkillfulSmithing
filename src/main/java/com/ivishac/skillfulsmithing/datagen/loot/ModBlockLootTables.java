@@ -18,6 +18,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.add(ModBlocks.FIRE_CLAY.get(),
                 block -> createSingleItemTable(ModItems.FIRE_CLAY_BALL.get(), ConstantValue.exactly(4)));
+
+        this.dropSelf(ModBlocks.MOLD_TABLE.get());
+        this.dropSelf(ModBlocks.BRICK_KILN.get());
     }
 
     @Override

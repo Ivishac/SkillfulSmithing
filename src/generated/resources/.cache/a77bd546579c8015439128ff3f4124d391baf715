@@ -1,2 +1,4 @@
-// 1.20.1	2025-11-27T20:45:48.4565052	Tags for minecraft:block mod id skillfulsmithing
+// 1.20.1	2025-11-30T01:23:36.9388399	Tags for minecraft:block mod id skillfulsmithing
+0b2501a6d1662ef68a3c119a69c1036c0c9d7425 data/minecraft/tags/blocks/mineable/pickaxe.json
 b01f777b75edee46fe185d19ade82eaac1f09e16 data/minecraft/tags/blocks/mineable/shovel.json
+e7822564b5299961f3aba6954e8885d46bfc59bf data/skillfulsmithing/tags/blocks/needs_flint_tool.json

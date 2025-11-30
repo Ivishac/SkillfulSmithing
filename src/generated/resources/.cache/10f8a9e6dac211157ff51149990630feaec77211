@@ -1,4 +1,8 @@
-// 1.20.1	2025-11-27T20:45:48.4575053	Block States: skillfulsmithing
+// 1.20.1	2025-11-30T02:37:02.1834808	Block States: skillfulsmithing
+6434c80fbe5befc0d8921387841a2715f66f4fdf assets/skillfulsmithing/blockstates/brick_kiln.json
 4abbfcdc784b2e9eb6e43cfba5da1e865f4c289c assets/skillfulsmithing/blockstates/fire_clay.json
+4c9be4b4f7df8880409f9db7820fbd1f1ef740c0 assets/skillfulsmithing/blockstates/mold_table.json
 fcb0fbe576607d60aab35e62d0b58ab2c1f9ddf2 assets/skillfulsmithing/models/block/fire_clay.json
+deeda821a8937fc232eeef7f263aff7268aa01df assets/skillfulsmithing/models/item/brick_kiln.json
 5812cbedbcd9b5f3ceaf98115b6c4bd577d9ec29 assets/skillfulsmithing/models/item/fire_clay.json
+bffc57bcfb1607fe4788975b6428dee96b8653dc assets/skillfulsmithing/models/item/mold_table.json

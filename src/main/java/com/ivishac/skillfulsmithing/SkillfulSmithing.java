@@ -1,6 +1,7 @@
 package com.ivishac.skillfulsmithing;
 
 import com.ivishac.skillfulsmithing.block.ModBlocks;
+import com.ivishac.skillfulsmithing.block.entity.ModBlockEntities;
 import com.ivishac.skillfulsmithing.item.ModCreativeModeTabs;
 import com.ivishac.skillfulsmithing.item.ModItems;
 import com.ivishac.skillfulsmithing.loot.ModLootModifiers;
@@ -41,6 +42,7 @@ public class SkillfulSmithing
         ModBlocks.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

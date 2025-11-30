@@ -27,11 +27,9 @@
   "item.skillfulsmithing.iron_tongs": "Iron Tongs",
   "item.skillfulsmithing.steel_tongs": "Steel Tongs",
 
-
-
-
-
   "block.skillfulsmithing.fire_clay": "Fire Clay",
+  "block.skillfulsmithing.mold_table": "Mold Table",
+  "block.skillfulsmithing.brick_kiln": "Brick Kiln",
 
   "creativetab.skillful_smithing": "Skillful Smithing"
 }
