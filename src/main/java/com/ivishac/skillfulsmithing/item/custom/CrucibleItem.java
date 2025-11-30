@@ -1,6 +1,5 @@
 package com.ivishac.skillfulsmithing.item.custom;
 
-import com.ivishac.skillfulsmithing.item.ModItems;
 import com.ivishac.skillfulsmithing.screen.CrucibleMenu;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

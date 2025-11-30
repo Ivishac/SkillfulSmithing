@@ -14,7 +14,12 @@ import java.util.List;
 public class ModToolTiers {
 
     public static final Tier FLINT = TierSortingRegistry.registerTier(
-            new ForgeTier(1, 120, 4f, 1f, 4,
+            new ForgeTier(1, 120, 1f, 1f, 4,
                     ModTags.Blocks.NEEDS_FLINT_TOOL, () -> Ingredient.EMPTY),
             new ResourceLocation(SkillfulSmithing.MOD_ID, "flint"), List.of(Tiers.WOOD), List.of(Tiers.STONE));
+
+    public static final Tier COPPER = TierSortingRegistry.registerTier(
+            new ForgeTier(1, 200, 2f, 1f, 4,
+                    ModTags.Blocks.NEEDS_COPPER_TOOL, () -> Ingredient.EMPTY),
+            new ResourceLocation(SkillfulSmithing.MOD_ID, "copper"), List.of(Tiers.WOOD), List.of(Tiers.STONE));
 }

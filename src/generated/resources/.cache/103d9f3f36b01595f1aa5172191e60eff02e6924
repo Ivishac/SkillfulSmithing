@@ -1,0 +1,4 @@
+// 1.20.1	2025-11-29T22:06:39.0192808	Registries
+78a011507ac80e7c2bf9fe9691b3e695458612e9 data/skillfulsmithing/forge/biome_modifier/add_fire_clay.json
+0bf72ae93bb0647a181db5962acacb39b497d415 data/skillfulsmithing/worldgen/configured_feature/fire_clay_disk.json
+c33d3744545398e1591998181df08ebe33500592 data/skillfulsmithing/worldgen/placed_feature/fire_clay_placed.json

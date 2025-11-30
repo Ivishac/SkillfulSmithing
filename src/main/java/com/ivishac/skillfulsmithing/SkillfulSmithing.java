@@ -3,6 +3,7 @@ package com.ivishac.skillfulsmithing;
 import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.item.ModCreativeModeTabs;
 import com.ivishac.skillfulsmithing.item.ModItems;
+import com.ivishac.skillfulsmithing.loot.ModLootModifiers;
 import com.ivishac.skillfulsmithing.screen.CrucibleScreen;
 import com.ivishac.skillfulsmithing.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
@@ -39,6 +40,7 @@ public class SkillfulSmithing
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.UNFIRED_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRED_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRE_CLAY_BALL.get());
+                        pOutput.accept(ModItems.PLANT_FIBER.get());
                         pOutput.accept(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRED_FIRE_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FLINT_SWORD.get());
@@ -31,6 +32,19 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.FLINT_AXE.get());
                         pOutput.accept(ModItems.FLINT_SHOVEL.get());
                         pOutput.accept(ModItems.FLINT_HOE.get());
+                        pOutput.accept(ModItems.COPPER_HAMMER.get());
+                        pOutput.accept(ModItems.TIN_HAMMER.get());
+                        pOutput.accept(ModItems.BRONZE_HAMMER.get());
+                        pOutput.accept(ModItems.NICKEL_HAMMER.get());
+                        pOutput.accept(ModItems.IRON_HAMMER.get());
+                        pOutput.accept(ModItems.STEEL_HAMMER.get());
+                        pOutput.accept(ModItems.WOODEN_TONGS.get());
+                        pOutput.accept(ModItems.COPPER_TONGS.get());
+                        pOutput.accept(ModItems.TIN_TONGS.get());
+                        pOutput.accept(ModItems.BRONZE_TONGS.get());
+                        pOutput.accept(ModItems.NICKEL_TONGS.get());
+                        pOutput.accept(ModItems.IRON_TONGS.get());
+                        pOutput.accept(ModItems.STEEL_TONGS.get());
 
                     })
                     .build());

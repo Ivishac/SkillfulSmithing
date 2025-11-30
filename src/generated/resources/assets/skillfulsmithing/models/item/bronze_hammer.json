@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "skillfulsmithing:item/bronze_hammer"
+  }
+}
