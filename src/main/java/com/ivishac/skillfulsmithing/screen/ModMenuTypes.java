@@ -16,6 +16,10 @@ public class ModMenuTypes {
             MENUS.register("crucible_menu",
                     () -> IForgeMenuType.create(CrucibleMenu::new));
 
+    public static final RegistryObject<MenuType<BrickKilnMenu>> KILN_MENU =
+            MENUS.register("brick_kiln",
+                    () -> IForgeMenuType.create(BrickKilnMenu::new));
+
     public static void register(IEventBus eventBus) {
         MENUS.register(eventBus);
     }

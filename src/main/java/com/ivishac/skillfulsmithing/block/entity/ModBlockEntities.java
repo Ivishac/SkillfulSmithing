@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(MoldTableBlockEntity::new,
                             ModBlocks.MOLD_TABLE.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<BrickKilnBlockEntity>> BRICK_KILN_BE =
+            BLOCK_ENTITIES.register("brick_kiln_be",
+                    () -> BlockEntityType.Builder.of(BrickKilnBlockEntity::new,
+                            ModBlocks.BRICK_KILN.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

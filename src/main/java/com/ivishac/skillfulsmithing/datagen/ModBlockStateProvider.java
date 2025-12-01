@@ -2,9 +2,11 @@ package com.ivishac.skillfulsmithing.datagen;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
 import com.ivishac.skillfulsmithing.block.ModBlocks;
+import com.ivishac.skillfulsmithing.block.custom.BrickKiln;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
