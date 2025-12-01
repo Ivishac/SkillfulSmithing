@@ -2,9 +2,10 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
+	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"0": "brick_kiln",
-		"particle": "brick_kiln"
+		"all": "block/brick_kiln",
+		"particle": "block/brick_kiln"
 	},
 	"elements": [
 		{
@@ -833,12 +834,6 @@
 			"origin": [8, 8, 8],
 			"color": 0,
 			"children": [
-				{
-					"name": "crucible",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": []
-				},
 				{
 					"name": "kiln",
 					"origin": [8, 8, 8],

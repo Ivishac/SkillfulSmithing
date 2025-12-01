@@ -2,6 +2,7 @@ package com.ivishac.skillfulsmithing.datagen;
 
 import com.ivishac.skillfulsmithing.SkillfulSmithing;
 import com.ivishac.skillfulsmithing.block.ModBlocks;
+import com.ivishac.skillfulsmithing.block.custom.BrickKiln;
 import com.ivishac.skillfulsmithing.block.custom.MoldTable;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -24,8 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
         moldTableBlock(ModBlocks.MOLD_TABLE);
 
-        simpleBlockWithItem(ModBlocks.BRICK_KILN.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/brick_kiln"))); //fixed item texture
+        brickKilnBlock();
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -54,6 +54,30 @@ public class ModBlockStateProvider extends BlockStateProvider
                 .addModel();
 
         // Item model -> use empty version
+        itemModels().getBuilder(name)
+                .parent(emptyModel);
+    }
+
+    private void brickKilnBlock() {
+        Block block = ModBlocks.BRICK_KILN.get();
+        String name = key(block).getPath(); // "brick_kiln"
+
+        ModelFile emptyModel = new ModelFile.UncheckedModelFile(
+                modLoc("block/brick_kiln"));
+        ModelFile filledModel = new ModelFile.UncheckedModelFile(
+                modLoc("block/brick_kiln_w_crucible"));
+
+        getVariantBuilder(block)
+                .partialState().with(BrickKiln.HAS_CRUCIBLE, Boolean.FALSE)
+                .modelForState()
+                .modelFile(emptyModel)
+                .addModel()
+                .partialState().with(BrickKiln.HAS_CRUCIBLE, Boolean.TRUE)
+                .modelForState()
+                .modelFile(filledModel)
+                .addModel();
+
+        // Item uses empty model
         itemModels().getBuilder(name)
                 .parent(emptyModel);
     }

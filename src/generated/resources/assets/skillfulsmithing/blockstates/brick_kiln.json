@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "has_crucible=false": {
       "model": "skillfulsmithing:block/brick_kiln"
+    },
+    "has_crucible=true": {
+      "model": "skillfulsmithing:block/brick_kiln_w_crucible"
     }
   }
 }
