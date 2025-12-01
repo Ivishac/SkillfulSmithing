@@ -1,6 +1,7 @@
 {
   "entries": [
-    "skillfulsmithing:plant_fiber_from_grass"
+    "skillfulsmithing:plant_fiber_from_grass",
+    "skillfulsmithing:flint_shards_from_gravel"
   ],
   "replace": false
 }

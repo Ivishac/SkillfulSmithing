@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "S": {
+      "item": "skillfulsmithing:flint_shard"
+    }
+  },
+  "pattern": [
+    "S ",
+    " F"
+  ],
+  "result": {
+    "item": "skillfulsmithing:flint_hoe_head"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "skillfulsmithing:flint_pickaxe_head"
+    },
+    {
+      "item": "skillfulsmithing:plant_fiber"
+    },
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "result": {
+    "item": "skillfulsmithing:flint_pickaxe"
+  }
+}
