@@ -1,90 +1,143 @@
 package com.ivishac.skillfulsmithing.screen;
 
+import com.ivishac.skillfulsmithing.item.custom.CrucibleItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class CrucibleMenu extends AbstractContainerMenu {
-    private final ItemStack crucibleStack;
+import java.util.ArrayList;
+import java.util.List;
 
-    protected CrucibleMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf pExtraData) {
-        this(pContainerId, pPlayerInventory, pPlayerInventory.getItem(pExtraData.readInt()));
+public class CrucibleMenu extends AbstractContainerMenu {
+
+    private final Inventory playerInventory;
+    private final int crucibleSlotIndex;
+    private final ItemStack crucibleStack;
+    private final ItemStackHandler handler;
+
+    // Client ctor
+    public CrucibleMenu(int containerId, Inventory playerInv, FriendlyByteBuf extraData) {
+        this(containerId, playerInv, extraData.readInt());
     }
 
-    public CrucibleMenu(int pContainerId, Inventory pPlayerInventory, ItemStack crucibleStack) {
-        super(ModMenuTypes.CRUCIBLE_MENU.get(), pContainerId);
-        this.crucibleStack = crucibleStack;
+    // Shared ctor
+    public CrucibleMenu(int containerId, Inventory playerInv, int crucibleSlotIndex) {
+        super(ModMenuTypes.CRUCIBLE_MENU.get(), containerId);
+        this.playerInventory = playerInv;
+        this.crucibleSlotIndex = crucibleSlotIndex;
+        this.crucibleStack = playerInv.getItem(crucibleSlotIndex);
 
-        this.crucibleStack.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 80, 17));
-            this.addSlot(new SlotItemHandler(handler, 1, 80, 35));
-        });
+        // --- handler now writes back to NBT on EVERY change ---
+        this.handler = new ItemStackHandler(2) {
+            @Override
+            public int getSlotLimit(int slot) {
+                return 64; // or 1 if you want single-item slots
+            }
 
-        addPlayerInventory(pPlayerInventory);
-        addPlayerHotbar(pPlayerInventory);
+            @Override
+            protected void onContentsChanged(int slot) {
+                super.onContentsChanged(slot);
+
+                // Only do NBT updates on the server side
+                if (!playerInventory.player.level().isClientSide) {
+                    List<ItemStack> contents = new ArrayList<>();
+                    for (int i = 0; i < getSlots(); i++) {
+                        contents.add(getStackInSlot(i));
+                    }
+
+                    // Write current handler contents into the crucible's NBT
+                    CrucibleItem.setContents(crucibleStack, contents);
+
+                    // Make sure the player inventory slot gets updated & marked dirty
+                    playerInventory.setItem(crucibleSlotIndex, crucibleStack);
+                    playerInventory.setChanged();
+                }
+            }
+        };
+
+        // Load NBT contents into handler once on open
+        List<ItemStack> contents = CrucibleItem.getContents(crucibleStack);
+        for (int i = 0; i < handler.getSlots(); i++) {
+            if (i < contents.size()) {
+                handler.setStackInSlot(i, contents.get(i));
+            } else {
+                handler.setStackInSlot(i, ItemStack.EMPTY);
+            }
+        }
+
+        // Crucible slots
+        this.addSlot(new SlotItemHandler(handler, 0, 80, 17));
+        this.addSlot(new SlotItemHandler(handler, 1, 80, 35));
+
+        addPlayerInventory(playerInv);
+        addPlayerHotbar(playerInv);
     }
 
     @Override
-    public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
+    public ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(pIndex);
+        Slot slot = this.slots.get(index);
 
         if (slot != null && slot.hasItem()) {
-            ItemStack itemstack1 = slot.getItem();
-            itemstack = itemstack1.copy();
+            ItemStack stackInSlot = slot.getItem();
+            itemstack = stackInSlot.copy();
 
-            // Indices 0 and 1 are the Crucible Inventory (Size 2)
-            if (pIndex < 2) {
-                // Move FROM Crucible TO Player Inventory (indices 2 to 38)
-                if (!this.moveItemStackTo(itemstack1, 2, 38, true)) {
+            int crucibleSlots = 2; // 0–1
+            int invStart = crucibleSlots;
+            int invEnd = this.slots.size();
+
+            if (index < crucibleSlots) {
+                // From crucible → player
+                if (!this.moveItemStackTo(stackInSlot, invStart, invEnd, true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else {
+                // From player → crucible
+                if (!this.moveItemStackTo(stackInSlot, 0, crucibleSlots, false)) {
                     return ItemStack.EMPTY;
                 }
             }
-            // Indices 2 to 38 are Player Inventory + Hotbar
-            else {
-                // Move FROM Player TO Crucible (indices 0 to 2)
-                if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
-                    return ItemStack.EMPTY;
-                }
-            }
 
-            if (itemstack1.isEmpty()) {
+            if (stackInSlot.isEmpty()) {
                 slot.set(ItemStack.EMPTY);
             } else {
                 slot.setChanged();
             }
 
-            if (itemstack1.getCount() == itemstack.getCount()) {
+            if (stackInSlot.getCount() == itemstack.getCount()) {
                 return ItemStack.EMPTY;
             }
 
-            slot.onTake(pPlayer, itemstack1);
+            slot.onTake(player, stackInSlot);
         }
 
         return itemstack;
     }
 
     @Override
-    public boolean stillValid(Player pPlayer) {
-        return !crucibleStack.isEmpty();
+    public boolean stillValid(Player player) {
+        ItemStack current = playerInventory.getItem(crucibleSlotIndex);
+        return !current.isEmpty() && current.getItem() instanceof CrucibleItem;
     }
 
-    private void addPlayerInventory(Inventory pPlayerInventory) {
-        for(int i = 0; i < 3; ++i) {
-            for(int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(pPlayerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+    private void addPlayerInventory(Inventory inv) {
+        for (int row = 0; row < 3; ++row) {
+            for (int col = 0; col < 9; ++col) {
+                this.addSlot(new Slot(inv, col + row * 9 + 9,
+                        8 + col * 18, 84 + row * 18));
             }
         }
     }
 
-    private void addPlayerHotbar(Inventory pPlayerInventory) {
-        for(int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(pPlayerInventory, i, 8 + i * 18, 142));
+    private void addPlayerHotbar(Inventory inv) {
+        for (int i = 0; i < 9; ++i) {
+            this.addSlot(new Slot(inv, i,
+                    8 + i * 18, 142));
         }
     }
 }

@@ -86,7 +86,6 @@ public class BrickKilnBlockEntity extends BlockEntity implements MenuProvider {
         if (be.burnTime > 0) {
             ItemStack crucibleStack = be.getCrucible();
             if (!crucibleStack.isEmpty() && crucibleStack.getItem() instanceof CrucibleItem) {
-                // uses the static helper we made on CrucibleItem
                 CrucibleItem.heatContents(crucibleStack, 5);
                 dirty = true;
             }
