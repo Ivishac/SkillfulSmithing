@@ -24,7 +24,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE);
         simpleItem(ModItems.FIRED_FIRE_CLAY_CRUCIBLE);
         simpleItem(ModItems.PLANT_FIBER);
+        simpleItem(ModItems.FLINT_SHARD);
+
         // FLINT SET
+        handheldItem(ModItems.FLINT_SWORD_HEAD);
+        handheldItem(ModItems.FLINT_PICKAXE_HEAD);
+        handheldItem(ModItems.FLINT_AXE_HEAD);
+        handheldItem(ModItems.FLINT_SHOVEL_HEAD);
+        handheldItem(ModItems.FLINT_HOE_HEAD);
+
         handheldItem(ModItems.FLINT_SWORD);
         handheldItem(ModItems.FLINT_PICKAXE);
         handheldItem(ModItems.FLINT_AXE);

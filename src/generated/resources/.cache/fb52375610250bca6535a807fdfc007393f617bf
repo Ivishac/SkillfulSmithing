@@ -1,3 +1,4 @@
-// 1.20.1	2025-11-29T23:50:11.2809786	Global Loot Modifiers : skillfulsmithing
-0885cdf5ab34c65156368b341e9230f2f37da3aa data/forge/loot_modifiers/global_loot_modifiers.json
+// 1.20.1	2025-11-30T17:59:54.7182396	Global Loot Modifiers : skillfulsmithing
+149661fe48acf6f24eefefbea60b203faac0fa30 data/forge/loot_modifiers/global_loot_modifiers.json
+d5c3d7a54eaa4ca9384d04dd8e36d8157beee22d data/skillfulsmithing/loot_modifiers/flint_shards_from_gravel.json
 24f065687502b1841e4d5f85f43dd73357832111 data/skillfulsmithing/loot_modifiers/plant_fiber_from_grass.json

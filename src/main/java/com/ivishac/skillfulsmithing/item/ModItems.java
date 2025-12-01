@@ -27,8 +27,21 @@ public class ModItems {
             () -> new CrucibleItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> PLANT_FIBER = ITEMS.register("plant_fiber",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLINT_SHARD = ITEMS.register("flint_shard",
+            () -> new Item(new Item.Properties()));
 
     // FLINT SET
+
+    public static final RegistryObject<Item> FLINT_SWORD_HEAD = ITEMS.register("flint_sword_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLINT_PICKAXE_HEAD = ITEMS.register("flint_pickaxe_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLINT_SHOVEL_HEAD = ITEMS.register("flint_shovel_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLINT_AXE_HEAD = ITEMS.register("flint_axe_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLINT_HOE_HEAD = ITEMS.register("flint_hoe_head",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> FLINT_SWORD = ITEMS.register("flint_sword",
             () -> new SwordItem(ModToolTiers.FLINT, 3, 1.0f, new Item.Properties()));

@@ -1,0 +1,14 @@
+{
+  "type": "skillfulsmithing:add_item",
+  "conditions": [
+    {
+      "block": "minecraft:gravel",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "chance": 0.189,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "skillfulsmithing:flint_shard"
+}

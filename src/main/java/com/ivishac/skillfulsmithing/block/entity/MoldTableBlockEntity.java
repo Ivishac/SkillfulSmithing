@@ -1,14 +1,15 @@
 package com.ivishac.skillfulsmithing.block.entity;
 
+import com.ivishac.skillfulsmithing.block.ModBlocks;
+import com.ivishac.skillfulsmithing.block.custom.MoldTable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class MoldTableBlockEntity extends BlockEntity {
@@ -21,24 +22,59 @@ public class MoldTableBlockEntity extends BlockEntity {
         super(ModBlockEntities.MOLD_TABLE_BE.get(), pPos, pBlockState);
     }
 
-    public boolean insertOneSand(ItemStack playerStack) {
-        if(playerStack.isEmpty() || !playerStack.is(Tags.Items.SAND)) {
+    public boolean insertFireClay(ItemStack playerStack) {
+        if (playerStack.isEmpty() || !playerStack.is(ModBlocks.FIRE_CLAY.get().asItem())) {
             return false;
         }
 
         ItemStack slotStack = itemHandler.getStackInSlot(0);
-        if(slotStack.isEmpty()) {
-            itemHandler.setStackInSlot(0, new ItemStack(Items.SAND, 1));
+        if (slotStack.isEmpty()) {
+            // Store the *same* sand type that the player used (sand OR red sand),
+            // but only 1 item.
+            ItemStack oneFireClay = playerStack.copy();
+            oneFireClay.setCount(1);
+
+            itemHandler.setStackInSlot(0, oneFireClay);
             playerStack.shrink(1);
             setChanged();
-            return true;
-        } else if(slotStack.is(Items.SAND) && slotStack.getCount() < slotStack.getMaxStackSize()) {
-            slotStack.grow(1);
-            playerStack.shrink(1);
-            setChanged();
+
+            //Mark Block as filled
+            if(this.level != null) {
+                BlockState state = this.level.getBlockState(this.worldPosition);
+                if(state.getBlock() instanceof MoldTable) {
+                    this.level.setBlock(this.worldPosition, state.setValue(MoldTable.FILLED, Boolean.TRUE), 3);
+                }
+            }
             return true;
         }
         return false;
+    }
+
+    public boolean removeFireClay(Player pPlayer) {
+        ItemStack slotStack = itemHandler.getStackInSlot(0);
+
+        if (slotStack.isEmpty()) {
+            return false;
+        }
+
+        // Give back the exact stack from the table
+        ItemStack toGive = slotStack.copy();
+        itemHandler.setStackInSlot(0, ItemStack.EMPTY);
+        setChanged();
+
+        if (!pPlayer.addItem(toGive) && this.level != null) {
+            pPlayer.drop(toGive, false);
+        }
+
+        //Mark Block as empty
+        if(this.level != null) {
+            BlockState state = this.level.getBlockState(this.worldPosition);
+            if(state.getBlock() instanceof MoldTable) {
+                this.level.setBlock(this.worldPosition, state.setValue(MoldTable.FILLED, Boolean.FALSE), 3);
+            }
+        }
+
+        return true;
     }
 
     public void drops() {

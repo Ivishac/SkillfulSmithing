@@ -30,8 +30,17 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.FIRED_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRE_CLAY_BALL.get());
                         pOutput.accept(ModItems.PLANT_FIBER.get());
+                        pOutput.accept(ModItems.FLINT_SHARD.get());
                         pOutput.accept(ModItems.UNFIRED_FIRE_CLAY_CRUCIBLE.get());
                         pOutput.accept(ModItems.FIRED_FIRE_CLAY_CRUCIBLE.get());
+
+                        // TOOL PARTS
+
+                        pOutput.accept(ModItems.FLINT_SWORD_HEAD.get());
+                        pOutput.accept(ModItems.FLINT_PICKAXE_HEAD.get());
+                        pOutput.accept(ModItems.FLINT_SHOVEL_HEAD.get());
+                        pOutput.accept(ModItems.FLINT_AXE_HEAD.get());
+                        pOutput.accept(ModItems.FLINT_HOE_HEAD.get());
 
                         // TOOLS & WEAPONS
 

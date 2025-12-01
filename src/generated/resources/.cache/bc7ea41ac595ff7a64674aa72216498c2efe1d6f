@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-29T23:06:26.61601	Item Models: skillfulsmithing
+// 1.20.1	2025-11-30T16:44:17.2797645	Item Models: skillfulsmithing
 ea35264c11a69056517afbe5f4d43b894fa080dc assets/skillfulsmithing/models/item/bronze_hammer.json
 e5f2a66fb6e0243846043f7ec4a2e5cf6aaa8189 assets/skillfulsmithing/models/item/bronze_tongs.json
 c21b40e40645eca268b1c54460f71f00b528a93a assets/skillfulsmithing/models/item/copper_hammer.json
@@ -7,10 +7,16 @@ b56d78cb8eb1cf4277921b3b3f781f346ddc39dc assets/skillfulsmithing/models/item/cop
 36900abc4f0fa0b81f19e2988bede71733dc1185 assets/skillfulsmithing/models/item/fired_fire_clay_crucible.json
 fe81a8c56a42b95850b1ef56d71eabfa46560b2c assets/skillfulsmithing/models/item/fire_clay_ball.json
 a32c3a85691548bbd8ae47b36f6376129488af05 assets/skillfulsmithing/models/item/flint_axe.json
+da20ec2fe48889598e9153e0a234f96e64bde3b6 assets/skillfulsmithing/models/item/flint_axe_head.json
 488c54926eae922eab69d811afe7da8de2e6f9c8 assets/skillfulsmithing/models/item/flint_hoe.json
+8b32ef5a6e5b1f7ad2ad343287aa4cca36a49105 assets/skillfulsmithing/models/item/flint_hoe_head.json
 26ba752e70094cb4ab440156db64a3d7619852db assets/skillfulsmithing/models/item/flint_pickaxe.json
+7ada6566f2d339c0515c461a0fadeaa14d83a0e8 assets/skillfulsmithing/models/item/flint_pickaxe_head.json
+91f6f731e9ba87ca29c2f151260909f06bcb0a3c assets/skillfulsmithing/models/item/flint_shard.json
 9d9add2c757a6806391ae9b8cdce49ca34405941 assets/skillfulsmithing/models/item/flint_shovel.json
+d1d75d2380d3966192d9ee2f0cb3d3526282503e assets/skillfulsmithing/models/item/flint_shovel_head.json
 d292be8836899889e68744cd2faec9a1f02be6e3 assets/skillfulsmithing/models/item/flint_sword.json
+fe8bd857e9c545a440a8abd4f9be69b6b539e14a assets/skillfulsmithing/models/item/flint_sword_head.json
 5a20c062ffc9f3e839b5b5135e847e1d11fb3aa9 assets/skillfulsmithing/models/item/iron_hammer.json
 76522c263e1ba16d5d3883ff84a8eb09f20befff assets/skillfulsmithing/models/item/iron_tongs.json
 0b26e6c1d53b4ba922db6c96cf55f3e8f0fe8dfb assets/skillfulsmithing/models/item/nickel_hammer.json

@@ -21,5 +21,10 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.GRASS).build(),
                 LootItemRandomChanceCondition.randomChance(0.125f).build()
         }, ModItems.PLANT_FIBER.get()));
+
+        add("flint_shards_from_gravel", new AddItemModifier(new LootItemCondition[] {
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.GRAVEL).build(),
+                LootItemRandomChanceCondition.randomChance(0.16f).build()
+        }, ModItems.FLINT_SHARD.get()));
     }
 }
