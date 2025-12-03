@@ -60,7 +60,7 @@ public class ModBlockStateProvider extends BlockStateProvider
 
     private void brickKilnBlock() {
         Block block = ModBlocks.BRICK_KILN.get();
-        String name = key(block).getPath(); // "brick_kiln"
+        String name = key(block).getPath();
 
         ModelFile emptyModel = new ModelFile.UncheckedModelFile(
                 modLoc("block/brick_kiln"));

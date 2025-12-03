@@ -9,6 +9,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -33,10 +34,39 @@ public class BrickKilnBlockEntity extends BlockEntity implements MenuProvider {
         }
     };
 
-    private int burnTime;
-    private int burnTimeTotal;
+    int burnTime;
+    int burnTimeTotal;
 
     private final LazyOptional<ItemStackHandler> itemCap = LazyOptional.of(() -> items);
+
+    // --- data for menu sync (burn progress) ---
+    private final ContainerData data = new ContainerData() {
+        @Override
+        public int get(int index) {
+            return switch (index) {
+                case 0 -> BrickKilnBlockEntity.this.burnTime;
+                case 1 -> BrickKilnBlockEntity.this.burnTimeTotal;
+                default -> 0;
+            };
+        }
+
+        @Override
+        public void set(int index, int value) {
+            switch (index) {
+                case 0 -> BrickKilnBlockEntity.this.burnTime = value;
+                case 1 -> BrickKilnBlockEntity.this.burnTimeTotal = value;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    };
+
+    public ContainerData getData() {
+        return data;
+    }
 
     public BrickKilnBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BRICK_KILN_BE.get(), pos, state);
@@ -105,8 +135,7 @@ public class BrickKilnBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInv, Player player) {
-        // use your actual menu class here – NOT ModMenuTypes
-        return new BrickKilnMenu(id, playerInv, this, ContainerLevelAccess.create(level, worldPosition));
+        return new BrickKilnMenu(id, playerInv, this, ContainerLevelAccess.create(level, worldPosition), data);
     }
 
     // --- Capabilities ---

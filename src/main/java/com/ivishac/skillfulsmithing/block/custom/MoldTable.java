@@ -2,7 +2,6 @@ package com.ivishac.skillfulsmithing.block.custom;
 
 import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.block.entity.MoldTableBlockEntity;
-import com.ivishac.skillfulsmithing.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

@@ -4,7 +4,7 @@
 	"texture_size": [128, 128],
 	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"all": "block/brick_kiln",
+		"0": "skillfulsmithing:block/brick_kiln",
 		"particle": "block/brick_kiln"
 	},
 	"elements": [

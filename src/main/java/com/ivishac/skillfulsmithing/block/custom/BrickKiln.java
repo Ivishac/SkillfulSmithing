@@ -13,6 +13,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 
@@ -30,10 +32,17 @@ public class BrickKiln extends BaseEntityBlock {
 
     public static final BooleanProperty HAS_CRUCIBLE = BooleanProperty.create("has_crucible");
 
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return Block.box(1.0D, 0.0D, 1.0D, 14.0D, 18.0D, 14.0D);
-    }
+    private static final VoxelShape BASE_SHAPE = Block.box(
+            1.0D, 0.0D, 1.0D,   // minX, minY, minZ
+            15.0D, 17.0D, 15.0D  // maxX, maxY, maxZ  (half-height base)
+    );
+
+    private static final VoxelShape CHIMNEY_SHAPE = Block.box(
+            5.0D, 17.0D, 5.0D, // a 4x4 chimney in the back-right corner
+            11.0D, 32.0D, 11.0D // full height
+    );
+
+    private static final VoxelShape KILN_SHAPE = Shapes.or(BASE_SHAPE, CHIMNEY_SHAPE);
 
     public BrickKiln(Properties properties) {
         super(properties);
@@ -45,6 +54,16 @@ public class BrickKiln extends BaseEntityBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(HAS_CRUCIBLE);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return KILN_SHAPE;
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
     }
 
     @Nullable

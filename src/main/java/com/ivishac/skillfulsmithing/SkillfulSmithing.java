@@ -5,6 +5,7 @@ import com.ivishac.skillfulsmithing.block.entity.ModBlockEntities;
 import com.ivishac.skillfulsmithing.item.ModCreativeModeTabs;
 import com.ivishac.skillfulsmithing.item.ModItems;
 import com.ivishac.skillfulsmithing.loot.ModLootModifiers;
+import com.ivishac.skillfulsmithing.screen.BrickKilnScreen;
 import com.ivishac.skillfulsmithing.screen.CrucibleScreen;
 import com.ivishac.skillfulsmithing.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
@@ -104,7 +105,7 @@ public class SkillfulSmithing
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             MenuScreens.register(ModMenuTypes.CRUCIBLE_MENU.get(), CrucibleScreen::new);
-
+            MenuScreens.register(ModMenuTypes.KILN_MENU.get(), BrickKilnScreen::new);
         }
     }
 }
