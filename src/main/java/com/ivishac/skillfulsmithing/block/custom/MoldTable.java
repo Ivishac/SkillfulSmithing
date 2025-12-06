@@ -2,10 +2,12 @@ package com.ivishac.skillfulsmithing.block.custom;
 
 import com.ivishac.skillfulsmithing.block.ModBlocks;
 import com.ivishac.skillfulsmithing.block.entity.MoldTableBlockEntity;
+import com.ivishac.skillfulsmithing.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -64,7 +66,9 @@ public class MoldTable extends BaseEntityBlock {
 
         if (be instanceof MoldTableBlockEntity moldTable) {
 
-            // Sneak-right-click: remove sand (if present)
+            ItemStack held = pPlayer.getItemInHand(pHand);
+
+            // Sneak-right-click: remove clay (if present)
             if (pPlayer.isShiftKeyDown()) {
                 if (!pLevel.isClientSide) {
                     boolean removed = moldTable.removeFireClay(pPlayer);
@@ -75,8 +79,7 @@ public class MoldTable extends BaseEntityBlock {
                 return InteractionResult.sidedSuccess(true);
             }
 
-            // Normal right-click: insert sand
-            ItemStack held = pPlayer.getItemInHand(pHand);
+            // If holding fire clay, insert it
             if (!held.isEmpty() && held.is(ModBlocks.FIRE_CLAY.get().asItem())) {
                 if (!pLevel.isClientSide) {
                     boolean inserted = moldTable.insertFireClay(held);
@@ -86,6 +89,31 @@ public class MoldTable extends BaseEntityBlock {
                     return InteractionResult.PASS;
                 }
                 return InteractionResult.sidedSuccess(true);
+            }
+
+            // If the table already has clay, allow selecting a head pattern
+            if (moldTable.hasFireClay() && !held.isEmpty()) {
+                // Only allow known head items here, adjust as needed
+                Item headItem = held.getItem();
+                boolean isHead =
+                        headItem == ModItems.FLINT_SWORD_HEAD.get() ||
+                                headItem == ModItems.FLINT_PICKAXE_HEAD.get() ||
+                                headItem == ModItems.FLINT_SHOVEL_HEAD.get() ||
+                                headItem == ModItems.FLINT_AXE_HEAD.get() ||
+                                headItem == ModItems.FLINT_HOE_HEAD.get();
+
+                if (isHead) {
+                    if (!pLevel.isClientSide) {
+                        boolean set = moldTable.setSelectedHeadFromItem(held);
+                        if (set) {
+                            // Decide if you want to consume the head pattern or not
+                            // For a reusable pattern, comment out the shrink:
+                            held.shrink(1);
+                            return InteractionResult.sidedSuccess(false);
+                        }
+                    }
+                    return InteractionResult.sidedSuccess(true);
+                }
             }
         }
 
@@ -107,5 +135,4 @@ public class MoldTable extends BaseEntityBlock {
     public <T extends BlockEntity> @Nullable BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pType) {
         return null;
     }
-
 }
